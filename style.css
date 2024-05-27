@@ -49,7 +49,7 @@
   .chats{
     width: 100%;
     height: 80%;
-    border: 2px solid black;
+    overflow-y: scroll;
 
   }
   .message{
@@ -78,5 +78,43 @@
     background-color: #e3f2fd;
   }
   i{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+  ul{
+    list-style: none;
+  }
+  .msgList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .user{
+    width: 80%;
+    font-size: 1rem;
+    background-color: rgba(17, 25, 40, 0.75);
+    padding: 1rem;
+    margin: 0.3rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.125);   
+    color: white;
+    overflow-y:auto ;
+
+  }
+  .bot{
+    width: 80%;
+    /* height: 10px; */
+    font-size: 1rem;
+    background-color: rgba(7, 10, 16, 0.75);
+    padding: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.125);   
+    color: white;
+    overflow-y:auto ;
   }

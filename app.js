@@ -1,6 +1,6 @@
 let messages = document.getElementsByClassName("msgList")[0]
 let userInput = document.getElementById("msg")
-let send = document.getElementsByClassName("send")
+let send = document.querySelector(".send")
 
 
 // console.log("here",messages.innerHTML)
@@ -9,7 +9,7 @@ console.log(send)
 const messageList = [
     {
         id: "user",
-        message: "Hello how are you"
+        message: "I am fine what about you?"
     },
     {
         id: "bot",
@@ -38,7 +38,7 @@ function sendMessage() {
     userInput.value = "";
 }
 
-send.addEventListener("click",sendMessage())
+send.addEventListener("click",sendMessage)
 
 function autoReply() {
     const dummyText = [
@@ -67,6 +67,6 @@ function autoReply() {
     const newMessage = Math.round(Math.random() * dummyText.length)
 
     console.log(dummyText[newMessage], "newMessage")
-    messages.innerHTML += `<li>  ${dummyText[newMessage].message}   </li>`;
+    messages.innerHTML += `<li class="bot">  ${dummyText[newMessage].message}   </li>`;
 }
 
