@@ -1,120 +1,169 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #e3f2fd;
-  }
-  .wrapper {
-    width: 85vmin;
-    height: 90vmin;
-    background-image: url("./Background.jpeg");
-    object-fit: cover;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-    border-radius: 12px;
-  }
-  .container{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        width: 80%;
-        height: 80%;
-        background-color: rgba(17, 25, 40, 0.75);
-        backdrop-filter: blur(19px) saturate(180%);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.125);      
-  }
-  .Name{
-    width: 100%;
-    padding: 15px;
-    color: #e3f2fd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    letter-spacing: 4px;
-  }
-  .chats{
-    width: 100%;
-    height: 80%;
-    overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e3f2fd;
+}
+
+.wrapper {
+  width: 85vmin;
+  height: 90vmin;
+  background-image: url("./bg.png");
+  background-size: cover;
+  object-fit: fill;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  background-color: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(19px) saturate(180%);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Name {
+  width: 100%;
+  padding: 5px;
+  padding-bottom: 7px;
+  color: #e3f2fd;
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  margin-bottom: 3px;
+}
+
+.chats {
+  width: 100%;
+  height: 80%;
+  border: 1px solid black;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+input {
+  width: 80%;
+  height: 100%;
+  border-radius: 8px;
+  outline: none;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #1E88E5;
+  background-color: transparent;
+  color: white;
+}
+
+.send {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.send:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.send i {
+  font-size: 1.5rem;
+  color: #1E88E5;
+  transition: color 0.3s;
+}
+
+.send:hover i {
+  color: #cfe3fc;
+}
+
+.msgList {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.msgList li {
+  display: block;
+  margin: 5px 0;
+  word-wrap: break-word;
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 12px;
+  list-style-type: none;
+}
+
+.msgList li.user {
+  background-color: #1e88e5;
+  color: white;
+  align-self: flex-end;
+}
+
+.msgList li.bot {
+  background-color: #757575;
+  color: white;
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 95vmin;
+    height: 95vmin;
   }
-  .message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 20%;
+
+  .container {
+    width: 95%;
+    height: 95%;
+  }
+
+  .message {
     gap: 10px;
   }
-  input{
-    width: 80%;
-    height: 40%;
-    border-radius: 10px;
-    outline: none;
-    padding: 15px;
-    font-size: 1.5rem;
-  }
-  .send{
-    width: 5.5%;
-    height: 30%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e3f2fd;
-  }
-  i{
-    font-size: 1.2rem;
-  }
-  ul{
-    list-style: none;
-  }
-  .msgList{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .user{
-    width: 80%;
-    font-size: 1rem;
-    background-color: rgba(17, 25, 40, 0.75);
-    padding: 1rem;
-    margin: 0.3rem;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.125);   
-    color: white;
-    overflow-y:auto ;
 
+  input {
+    width: 70%;
+    font-size: 0.9rem;
   }
-  .bot{
-    width: 80%;
-    /* height: 10px; */
-    font-size: 1rem;
-    background-color: rgba(7, 10, 16, 0.75);
-    padding: 1rem;
-    display: flex;
-    justify-content: start;
-    align-items: end;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.125);   
-    color: white;
-    overflow-y:auto ;
+
+  .send i {
+    font-size: 2rem;
   }
+
+  .msgList li {
+    max-width: 90%;
+  }
+}

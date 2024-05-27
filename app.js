@@ -1,72 +1,73 @@
-let messages = document.getElementsByClassName("msgList")[0]
-let userInput = document.getElementById("msg")
-let send = document.querySelector(".send")
+let messages = document.getElementsByClassName("msgList")[0];
+let msg = '';
+let userInput = document.getElementById("msg");
 
+userInput.addEventListener('input', (e) => {
+    msg = e.target.value;
+});
 
-// console.log("here",messages.innerHTML)
-console.log(send)
+let send = document.getElementsByClassName("send")[0];
 
 const messageList = [
     {
         id: "user",
-        message: "I am fine what about you?"
+        message: "Hello, how are you?"
     },
     {
         id: "bot",
-        message: "me thek hon"
+        message: "I'm fine, thank you!"
     },
     {
         id: "user",
-        message: "or kia chal raha he"
+        message: "What's up?"
     },
     {
         id: "bot",
-        message: "bas farigh han"
+        message: "Just hanging around."
     }
-]
+];
 
-// render list of messages
-if(messages.innerHTML != null){
-    for (let i = 0; i < messageList.length; i++) {
-        messages.innerHTML += `<li class=${messageList[i].id} >  ${messageList[i].message}  </li>`
-    }
+// Render list of messages
+for (let i = 0; i < messageList.length; i++) {
+    messages.innerHTML += `<li class="${messageList[i].id}">${messageList[i].message}</li>`;
 }
 
 function sendMessage() {
-    messages.innerHTML += `<li class="user">${userInput.value}</li>`;
-    setTimeout(autoReply, 1000);
-    userInput.value = "";
+    if (msg.trim()) {
+        messages.innerHTML += `<li class="user">${msg}</li>`;
+        setTimeout(autoReply, 1000);
+        userInput.value = "";
+        msg = '';  // Clear the message after sending
+    }
 }
 
-send.addEventListener("click",sendMessage)
+send.addEventListener("click", sendMessage);
 
 function autoReply() {
     const dummyText = [
         {
             id: "bot",
-            message: "bado badi"
+            message: "Indeed."
         },
         {
             id: "bot",
-            message: "peche toh dekho"
+            message: "Look behind you."
         },
         {
             id: "bot",
-            message: "keya pora din swal karte rahte ho"
+            message: "Why ask so many questions?"
         },
         {
             id: "bot",
-            message: "bas karo bhai"
+            message: "Enough already."
         },
         {
             id: "bot",
-            message: "thora samjh aa raha he"
+            message: "Starting to understand now."
         }
-    ]
+    ];
 
-    const newMessage = Math.round(Math.random() * dummyText.length)
+    const newMessage = Math.floor(Math.random() * dummyText.length);
 
-    console.log(dummyText[newMessage], "newMessage")
-    messages.innerHTML += `<li class="bot">  ${dummyText[newMessage].message}   </li>`;
+    messages.innerHTML += `<li class="bot">${dummyText[newMessage].message}</li>`;
 }
-
