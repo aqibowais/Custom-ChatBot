@@ -16,7 +16,7 @@ body {
 .wrapper {
   width: 85vmin;
   height: 90vmin;
-  background-image: url("./bg.png");
+  background-image: url("./Background.jpeg");
   background-size: cover;
   object-fit: fill;
   border-radius: 12px;
