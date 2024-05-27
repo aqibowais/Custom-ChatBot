@@ -32,7 +32,11 @@ for (let i = 0; i < messageList.length; i++) {
     messages.innerHTML += `<li class="${messageList[i].id}">${messageList[i].message}</li>`;
 }
 
-
+function checkEnterKey(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+}
 function sendMessage() {
     if (msg.trim()) {
         messages.innerHTML += `<li class="user">${msg}</li>`;
